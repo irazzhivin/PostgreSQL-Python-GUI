@@ -1,5 +1,5 @@
 
-------------------- UPDATE factory -------------------
+------------------- UPDATE FACTORY -------------------
 CREATE OR REPLACE FUNCTION 
 	update_factory(p_id integer, new_name text, new_foundation_date date, new_address text, new_car_number integer) 
 RETURNS void AS $$
@@ -14,7 +14,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- UPDATE car -------------------
+------------------- UPDATE CAR -------------------
 CREATE OR REPLACE FUNCTION 
 	update_car(p_id integer, new_name text, new_year integer, new_factory_id integer) 
 RETURNS void AS $$
@@ -28,7 +28,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE factory BY ID -------------------
+------------------- DELETE FACTORY BY ID -------------------
 CREATE OR REPLACE FUNCTION delete_factory(p_id integer) 
 RETURNS void AS $$
 BEGIN
@@ -38,7 +38,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE car BY ID -------------------
+------------------- DELETE CAR BY ID -------------------
 CREATE OR REPLACE FUNCTION delete_car(f_id integer) 
 RETURNS void AS $$
 BEGIN
@@ -48,7 +48,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE factory BY NAME -------------------
+------------------- DELETE FACTORY BY NAME -------------------
 CREATE OR REPLACE FUNCTION delete_factorys_by_name(name_to_find text) 
 RETURNS void AS $$
 BEGIN
@@ -58,7 +58,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE car BY name -------------------
+------------------- DELETE CAR BY NAME -------------------
 CREATE OR REPLACE FUNCTION delete_cars_by_name(name_to_find text) 
 RETURNS void AS $$
 BEGIN
@@ -68,7 +68,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- FIND factory -------------------
+------------------- FIND FACTORY -------------------
 CREATE OR REPLACE FUNCTION find_factorys(name_to_find text) 
 RETURNS TABLE(id integer, name text, foundation_date date, address text, car_number integer) 
 AS $func$
@@ -80,7 +80,7 @@ END
 $func$ LANGUAGE plpgsql;
 
 
-------------------- FIND car -------------------
+------------------- FIND CAR -------------------
 CREATE OR REPLACE FUNCTION find_cars(name_to_find text) 
 RETURNS TABLE(id integer, name text, year integer, factory_id integer) 
 AS $func$
@@ -92,7 +92,7 @@ END
 $func$ LANGUAGE plpgsql;
 
 
-------------------- INSERT factory -------------------
+------------------- INSERT FACTORY -------------------
 CREATE OR REPLACE FUNCTION insert_factory(p_id integer, name text, foundation_date date, address text, car_number integer)
 RETURNS void AS $$
 BEGIN
@@ -103,7 +103,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- INSERT car -------------------
+------------------- INSERT CAR -------------------
 CREATE OR REPLACE FUNCTION insert_car(id integer, name text, year integer, factory_id integer) 
 RETURNS void AS $$
 BEGIN
@@ -114,7 +114,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE ALL factory -------------------
+------------------- DELETE ALL FACTORY -------------------
 CREATE OR REPLACE FUNCTION delete_all_factorys() 
 RETURNS void AS $$
 BEGIN
@@ -123,7 +123,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- DELETE ALL car -------------------
+------------------- DELETE ALL CAR -------------------
 CREATE OR REPLACE FUNCTION delete_all_cars() 
 RETURNS void AS $$
 BEGIN
@@ -132,7 +132,7 @@ END
 $$ LANGUAGE plpgsql;
 
 
-------------------- SELECT ALL factory -------------------
+------------------- SELECT ALL FACTORY -------------------
 CREATE OR REPLACE FUNCTION get_factorys() 
 RETURNS TABLE(id integer, name text, foundation_date date, address text, car_number integer) 
 AS $func$
@@ -143,7 +143,7 @@ END
 $func$ LANGUAGE plpgsql;
 
 
-------------------- SELECT ALL car -------------------
+------------------- SELECT ALL CAR -------------------
 CREATE OR REPLACE FUNCTION get_cars() 
 RETURNS TABLE(id integer, name text, year integer, factory_id integer) 
 AS $func$
